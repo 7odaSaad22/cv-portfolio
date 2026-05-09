@@ -19,10 +19,13 @@
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen py-8">
-  <!-- Print Button -->
-  <div class="no-print fixed top-4 left-4 z-50">
-    <button onclick="window.print()" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg transition transform hover:scale-105">
-      🖨️ طباعة / حفظ PDF
+  <!-- Action Buttons -->
+  <div class="no-print fixed top-4 left-4 z-50 flex gap-2">
+    <button onclick="window.print()" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-3 rounded-xl font-bold shadow-lg transition transform hover:scale-105 text-sm">
+      🖨️ طباعة
+    </button>
+    <button onclick="downloadPDF()" class="bg-gray-800 hover:bg-gray-900 text-white px-5 py-3 rounded-xl font-bold shadow-lg transition transform hover:scale-105 text-sm">
+      📥 تحميل PDF
     </button>
   </div>
 
@@ -34,7 +37,7 @@
           👨‍💻
         </div>
         <div class="text-center md:text-right flex-1">
-          <h1 class="text-3xl md:text-4xl font-black mb-2">هودا سعد</h1>
+          <h1 class="text-3xl md:text-4xl font-black mb-2">محمود سعد</h1>
           <p class="text-primary-100 text-lg font-bold mb-3">مطور ويب Full-Stack</p>
           <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm">
             <span class="bg-white/10 px-3 py-1.5 rounded-lg">📞 01158221296</span>
@@ -222,5 +225,26 @@
       </section>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector('.max-w-4xl');
+      const btn = document.querySelector('.no-print');
+      btn.style.display = 'none';
+      
+      const opt = {
+        margin: 0,
+        filename: 'محمود_سعد_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        btn.style.display = '';
+      });
+    }
+  </script>
 </body>
 </html>
