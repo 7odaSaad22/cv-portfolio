@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>السيرة الذاتية — مطور ويب</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:{50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d'}}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family: 'Cairo', sans-serif; }
+    body { direction: rtl; }
+    @media print {
+      body { background: white !important; }
+      .no-print { display: none !important; }
+      .page-break { page-break-after: always; }
+      .shadow-xl { box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+  <!-- Print Button -->
+  <div class="no-print fixed top-4 left-4 z-50">
+    <button onclick="window.print()" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg transition transform hover:scale-105">
+      🖨️ طباعة / حفظ PDF
+    </button>
+  </div>
+
+  <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+    <!-- Header -->
+    <div class="bg-gradient-to-l from-primary-700 to-primary-900 text-white p-8 md:p-12">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="w-28 h-28 bg-white/10 rounded-full flex items-center justify-center text-5xl border-4 border-white/20">
+          👨‍💻
+        </div>
+        <div class="text-center md:text-right flex-1">
+          <h1 class="text-3xl md:text-4xl font-black mb-2">هودا سعد</h1>
+          <p class="text-primary-100 text-lg font-bold mb-3">مطور ويب Full-Stack</p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm">
+            <span class="bg-white/10 px-3 py-1.5 rounded-lg">📞 01158221296</span>
+            <span class="bg-white/10 px-3 py-1.5 rounded-lg">📧 7odasaad22@gmail.com</span>
+            <span class="bg-white/10 px-3 py-1.5 rounded-lg">📍 مصر</span>
+            <a href="https://github.com/7odaSaad22" target="_blank" class="bg-white/10 px-3 py-1.5 rounded-lg hover:bg-white/20 transition">🔗 GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-8 md:p-12 space-y-10">
+      <!-- About -->
+      <section>
+        <h2 class="text-2xl font-extrabold text-primary-800 mb-4 flex items-center gap-2">
+          <span class="bg-primary-100 text-primary-700 p-2 rounded-xl">👤</span> نبذة عني
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          مطور ويب متخصص في بناء تطبيقات الويب الكاملة من الفرونت إند للباك إند. خبرة في تصميم وتطوير مواقع التجارة الإلكترونية، لوحات التحكم الإدارية، وواجهات المستخدم التفاعلية. أتعامل مع أحدث التقنيات مثل HTML5, CSS3, JavaScript, Tailwind CSS, Supabase, وأدوات إدارة المشاريع الحديثة. أسعى دائمًا لتقديم حلول عملية بجودة عالية وتجربة مستخدم ممتازة.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <h2 class="text-2xl font-extrabold text-primary-800 mb-4 flex items-center gap-2">
+          <span class="bg-primary-100 text-primary-700 p-2 rounded-xl">💻</span> المهارات التقنية
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-gray-50 rounded-xl p-4">
+            <h3 class="font-bold text-sm text-primary-700 mb-3">Frontend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">HTML5</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">CSS3</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">JavaScript ES6+</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Tailwind CSS</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">React.js</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Next.js</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Responsive Design</span>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <h3 class="font-bold text-sm text-primary-700 mb-3">Backend & Database</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Supabase</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">PostgreSQL</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Prisma ORM</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">REST APIs</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Realtime (WebSockets)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Authentication</span>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <h3 class="font-bold text-sm text-primary-700 mb-3">أدوات وتقنيات</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Git & GitHub</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">Netlify</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">VS Code</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">npm</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">SEO</span>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4">
+            <h3 class="font-bold text-sm text-primary-700 mb-3">مهارات أخرى</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">UI/UX Design</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">تصميم RTL</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">E-Commerce</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">لوحات تحكم</span>
+              <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-bold">تحسين الأداء</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <h2 class="text-2xl font-extrabold text-primary-800 mb-4 flex items-center gap-2">
+          <span class="bg-primary-100 text-primary-700 p-2 rounded-xl">🚀</span> المشاريع
+        </h2>
+        <div class="space-y-6">
+          <!-- Project 1 -->
+          <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-md transition">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="font-extrabold text-lg text-gray-800">🌿 عطارة اليرموك — متجر إلكتروني كامل</h3>
+                <p class="text-xs text-gray-400">2024 — مشروع تجاري حقيقي</p>
+              </div>
+              <a href="https://github.com/7odaSaad22/attaret-alyarmouk" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg text-xs font-bold transition no-print">GitHub ←</a>
+            </div>
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+              متجر إلكتروني متكامل لبيع الأعشاب والبهارات والزيوت الطبيعية أونلاين. يشمل واجهة عرض المنتجات، سلة تسوق، نظام طلبات، لوحة تحكم إدارية كاملة، وإشعارات لحظية.
+            </p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">المميزات:</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5 text-xs text-gray-600">
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> صفحة رئيسية ديناميكية مع Hero section وعروض</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> نظام منتجات مع بحث وفلاتر وتصنيفات</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> سلة تسوق + Checkout + ربط واتساب</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> لوحة تحكم إدارية (Dashboard, Products, Orders)</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> نظام خصومات وعروض وإدارة المنتجات المميزة</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> إشعارات لحظية (Realtime) عند وصول طلب جديد</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> صفحة تتبع الطلب للعميل</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> أنيميشن + Toast + Skeleton Loading</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> تصميم متجاوب RTL بالكامل</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> نظام مصادقة أدمن + إعدادات كلمة السر</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">HTML5</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Tailwind CSS</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">JavaScript</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Supabase</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">PostgreSQL</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Realtime</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Netlify</span>
+            </div>
+          </div>
+
+          <!-- Project 2 - Template -->
+          <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-md transition">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="font-extrabold text-lg text-gray-800">📊 لوحة تحكم إدارية — Admin Dashboard</h3>
+                <p class="text-xs text-gray-400">2024</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+              لوحة تحكم متقدمة لإدارة المتاجر الإلكترونية تشمل إحصائيات مبيعات، إدارة منتجات، طلبات، عروض، وتصنيفات مع واجهة حديثة ومتجاوبة.
+            </p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">المميزات:</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5 text-xs text-gray-600">
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> داشبورد مع إحصائيات وإيرادات</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> إدارة المنتجات (CRUD + صور + خصومات)</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> إدارة الطلبات مع تحديث الحالة</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> إشعارات فورية بدون refresh</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> Sidebar navigation متجاوب</div>
+                <div class="flex items-center gap-2"><span class="text-primary-600">✓</span> نظام بحث وفلاتر متقدمة</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">JavaScript</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Tailwind CSS</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">Supabase</span>
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-1 rounded-lg text-xs font-bold">WebSockets</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Can Do -->
+      <section>
+        <h2 class="text-2xl font-extrabold text-primary-800 mb-4 flex items-center gap-2">
+          <span class="bg-primary-100 text-primary-700 p-2 rounded-xl">⚡</span> الخدمات اللي أقدمها
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl mb-2">🛒</div>
+            <h3 class="font-bold text-sm mb-1">متاجر إلكترونية</h3>
+            <p class="text-xs text-gray-500">تصميم وبرمجة متاجر كاملة مع سلة تسوق ونظام طلبات</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl mb-2">📊</div>
+            <h3 class="font-bold text-sm mb-1">لوحات تحكم</h3>
+            <p class="text-xs text-gray-500">داشبورد إدارية متقدمة مع إحصائيات وتقارير</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl mb-2">🌐</div>
+            <h3 class="font-bold text-sm mb-1">مواقع تعريفية</h3>
+            <p class="text-xs text-gray-500">Landing pages ومواقع شركات بتصميم عصري</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="bg-primary-50 rounded-2xl p-6 text-center">
+        <h2 class="text-xl font-extrabold text-primary-800 mb-3">📬 تواصل معي</h2>
+        <p class="text-gray-600 text-sm mb-4">مستعد لتنفيذ مشروعك بأعلى جودة</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="tel:01158221296" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition">📞 01158221296</a>
+          <a href="https://wa.me/201158221296" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition">📱 واتساب</a>
+          <a href="mailto:7odasaad22@gmail.com" class="bg-gray-700 hover:bg-gray-800 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition">📧 إيميل</a>
+          <a href="https://github.com/7odaSaad22" target="_blank" class="bg-gray-900 hover:bg-black text-white px-5 py-2.5 rounded-xl font-bold text-sm transition">🔗 GitHub</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
