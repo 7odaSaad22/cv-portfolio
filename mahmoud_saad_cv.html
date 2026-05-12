@@ -1,202 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mahmoud Saad — Full-Stack Web Developer. E-commerce, dashboards, modern web stacks.">
+  <title>Mahmoud Saad — CV</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.26.0/dist/tabler-icons.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+    :root {
+      --color-text-primary: #0f172a;
+      --color-text-secondary: #475569;
+      --color-text-tertiary: #94a3b8;
+      --color-background-primary: #fafafa;
+      --color-background-secondary: #f1f5f9;
+      --color-border-tertiary: #e2e8f0;
+      --border-radius-md: 8px;
+      --border-radius-lg: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--color-text-primary);
+      background: var(--color-background-primary);
+      min-height: 100vh;
+    }
+    .cv {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 32px 80px;
+      color: var(--color-text-primary);
+      background: var(--color-background-primary);
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--color-text-primary);
+    }
+    .name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .title {
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--color-text-secondary);
+      margin-top: 8px;
+    }
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: right;
+    }
+    .contact-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+    .contact-item a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      color: var(--color-text-primary);
+    }
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 40px;
+      margin-top: 32px;
+    }
+    @media (max-width: 720px) {
+      .header {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        text-align: left;
+      }
+      .contact-item {
+        justify-content: flex-start;
+      }
+      .body {
+        grid-template-columns: 1fr;
+      }
+    }
+    .section { margin-bottom: 28px; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+    .summary {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+    .project {
+      padding: 16px;
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      gap: 12px;
+    }
+    .project-name { font-size: 15px; font-weight: 500; }
+    .project-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--color-text-tertiary);
+      margin-top: 2px;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 4px; }
+    .badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--color-background-secondary);
+      color: var(--color-text-secondary);
+      border: 0.5px solid var(--color-border-tertiary);
+    }
+    .live-badge {
+      background: #e1f5ee;
+      color: #0f6e56;
+      border-color: #5dcaa5;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: var(--color-background-secondary);
+      color: var(--color-text-secondary);
+      border: 0.5px solid var(--color-border-tertiary);
+    }
+    .skill-tag.main-tag {
+      background: #eeedfe;
+      color: #3c3489;
+      border-color: #afa9ec;
+    }
+    .service-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--border-radius-md);
+      border: 0.5px solid var(--color-border-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--color-background-secondary);
+    }
+    .service-icon i { font-size: 15px; color: var(--color-text-secondary); }
+    .service-name { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .service-desc {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      padding: 8px 10px;
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-md);
+      background: var(--color-background-secondary);
+    }
+    .contact-link:hover {
+      color: var(--color-text-primary);
+      border-color: var(--color-text-tertiary);
+    }
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background: var(--color-text-primary);
+      color: var(--color-background-primary);
+      border: none;
+      border-radius: var(--border-radius-md);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+    .print-btn:hover { opacity: 0.88; }
+    @media print {
+      .print-btn { display: none; }
+      body { background: #fff; }
+      .cv { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Professional CV for Mahmoud Saad, Full-Stack Web Developer</h2>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box}
-  .cv{max-width:800px;margin:0 auto;padding:40px 32px;font-family:'Inter',sans-serif;color:var(--color-text-primary);background:var(--color-background-primary)}
-  .header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-bottom:28px;border-bottom:2px solid var(--color-text-primary)}
-  .name{font-family:'DM Serif Display',serif;font-size:42px;line-height:1.1;letter-spacing:-1px}
-  .title{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:3px;color:var(--color-text-secondary);margin-top:8px}
-  .contact-grid{display:flex;flex-direction:column;gap:6px;text-align:right}
-  .contact-item{font-family:'DM Mono',monospace;font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:6px;justify-content:flex-end}
-  .contact-item a{color:var(--color-text-secondary);text-decoration:none}
-  .contact-item a:hover{color:var(--color-text-primary)}
-  .body{display:grid;grid-template-columns:1fr 280px;gap:40px;margin-top:32px}
-  .main{}
-  .sidebar{}
-  .section{margin-bottom:28px}
-  .section-label{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:14px;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary)}
-  .summary{font-size:14px;line-height:1.7;color:var(--color-text-secondary)}
-  .project{padding:16px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:12px;position:relative}
-  .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
-  .project-name{font-size:15px;font-weight:500}
-  .project-year{font-family:'DM Mono',monospace;font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
-  .project-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:10px}
-  .badge-row{display:flex;flex-wrap:wrap;gap:4px}
-  .badge{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
-  .live-badge{background:#E1F5EE;color:#0F6E56;border-color:#5DCAA5;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px}
-  .skill-group{margin-bottom:16px}
-  .skill-group-name{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px}
-  .skill-tags{display:flex;flex-wrap:wrap;gap:4px}
-  .skill-tag{font-family:'DM Mono',monospace;font-size:11px;padding:4px 8px;border-radius:4px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
-  .skill-tag.main-tag{background:#EEEDFE;color:#3C3489;border-color:#AFA9EC}
-  .service-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-  .service-icon{width:32px;height:32px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--color-background-secondary)}
-  .service-icon i{font-size:15px;color:var(--color-text-secondary)}
-  .service-text{}
-  .service-name{font-size:13px;font-weight:500;margin-bottom:2px}
-  .service-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
-  .print-btn{position:fixed;top:20px;right:20px;padding:8px 16px;background:var(--color-text-primary);color:var(--color-background-primary);border:none;border-radius:var(--border-radius-md);font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:1px;cursor:pointer;text-transform:uppercase}
-  .print-btn:hover{opacity:0.8}
-  @media print{.print-btn{display:none}}
-</style>
-<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Professional CV for Mahmoud Saad, Full-Stack Web Developer</h2>
-
-<div class="cv">
-
-  <div class="header">
-    <div>
-      <div class="name">Mahmoud Saad</div>
-      <div class="title">Full-Stack Web Developer</div>
+  <div class="cv">
+    <div class="header">
+      <div>
+        <div class="name">Mahmoud Saad</div>
+        <div class="title">Full-Stack Web Developer</div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item"><i class="ti ti-phone" aria-hidden="true"></i><a href="tel:+201158221296">+20 115 822 1296</a></div>
+        <div class="contact-item"><i class="ti ti-mail" aria-hidden="true"></i><a href="mailto:7odasaad22@gmail.com">7odasaad22@gmail.com</a></div>
+        <div class="contact-item"><i class="ti ti-brand-github" aria-hidden="true"></i><a href="https://github.com/7odaSaad22" target="_blank" rel="noopener noreferrer">7odaSaad22</a></div>
+        <div class="contact-item"><i class="ti ti-map-pin" aria-hidden="true"></i>Egypt</div>
+      </div>
     </div>
-    <div class="contact-grid">
-      <div class="contact-item"><i class="ti ti-phone" aria-hidden="true"></i><a href="tel:+201158221296">+20 115 822 1296</a></div>
-      <div class="contact-item"><i class="ti ti-mail" aria-hidden="true"></i><a href="mailto:7odasaad22@gmail.com">7odasaad22@gmail.com</a></div>
-      <div class="contact-item"><i class="ti ti-brand-github" aria-hidden="true"></i><a href="https://github.com/7odaSaad22" target="_blank">7odaSaad22</a></div>
-      <div class="contact-item"><i class="ti ti-map-pin" aria-hidden="true"></i>Egypt</div>
+
+    <div class="body">
+      <div class="main">
+        <div class="section">
+          <div class="section-label">Profile</div>
+          <p class="summary">Full-stack web developer specializing in building end-to-end web applications — from pixel-perfect frontends to robust backends. Experienced in e-commerce platforms, admin dashboards, and interactive UIs. Passionate about clean code, great UX, and modern tech stacks.</p>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Projects</div>
+
+          <div class="project">
+            <div class="project-header">
+              <div>
+                <div class="project-name">Attaret Al-Yarmouk — E-Commerce Platform</div>
+                <div class="project-year">2024 · Real commercial project</div>
+              </div>
+              <span class="live-badge">Live</span>
+            </div>
+            <p class="project-desc">Full-featured online store for herbs, spices, and natural oils. Includes product catalog with search and filters, shopping cart, WhatsApp checkout integration, real-time order notifications, customer order tracking, and a complete admin dashboard with discount management.</p>
+            <div class="badge-row">
+              <span class="badge">HTML5</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Realtime</span>
+              <span class="badge">Netlify</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <div>
+                <div class="project-name">Admin Dashboard — Store Management System</div>
+                <div class="project-year">2024</div>
+              </div>
+            </div>
+            <p class="project-desc">Advanced admin panel for e-commerce management with sales analytics, full product CRUD, order management with status updates, real-time notifications without page refresh, and advanced search and filter capabilities.</p>
+            <div class="badge-row">
+              <span class="badge">JavaScript</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">WebSockets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Services</div>
+          <div class="service-item">
+            <div class="service-icon"><i class="ti ti-shopping-cart" aria-hidden="true"></i></div>
+            <div>
+              <div class="service-name">E-Commerce Development</div>
+              <div class="service-desc">Full-featured stores with cart, orders, and real-time notifications</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+            <div>
+              <div class="service-name">Admin Dashboards</div>
+              <div class="service-desc">Advanced management panels with analytics and reporting</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon"><i class="ti ti-world" aria-hidden="true"></i></div>
+            <div>
+              <div class="service-name">Landing Pages &amp; Websites</div>
+              <div class="service-desc">Modern, responsive landing pages and company websites</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="section">
+          <div class="section-label">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag main-tag">HTML5</span>
+            <span class="skill-tag main-tag">CSS3</span>
+            <span class="skill-tag main-tag">JavaScript ES6+</span>
+            <span class="skill-tag main-tag">Tailwind CSS</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">RTL Design</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Backend &amp; Database</div>
+          <div class="skill-tags">
+            <span class="skill-tag main-tag">Supabase</span>
+            <span class="skill-tag main-tag">PostgreSQL</span>
+            <span class="skill-tag">Prisma ORM</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">WebSockets</span>
+            <span class="skill-tag">Authentication</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">Netlify</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">npm</span>
+            <span class="skill-tag">SEO</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Specialties</div>
+          <div class="skill-tags">
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Performance Optimization</span>
+            <span class="skill-tag">E-Commerce</span>
+            <span class="skill-tag">Real-time Apps</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Contact</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a class="contact-link" href="https://wa.me/201158221296" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-whatsapp" style="font-size:16px" aria-hidden="true"></i> WhatsApp
+            </a>
+            <a class="contact-link" href="https://github.com/7odaSaad22" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-github" style="font-size:16px" aria-hidden="true"></i> GitHub Profile
+            </a>
+            <a class="contact-link" href="mailto:7odasaad22@gmail.com">
+              <i class="ti ti-mail" style="font-size:16px" aria-hidden="true"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="body">
-    <div class="main">
-
-      <div class="section">
-        <div class="section-label">Profile</div>
-        <p class="summary">Full-stack web developer specializing in building end-to-end web applications — from pixel-perfect frontends to robust backends. Experienced in e-commerce platforms, admin dashboards, and interactive UIs. Passionate about clean code, great UX, and modern tech stacks.</p>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Projects</div>
-
-        <div class="project">
-          <div class="project-header">
-            <div>
-              <div class="project-name">Attaret Al-Yarmouk — E-Commerce Platform</div>
-              <div class="project-year">2024 · Real commercial project</div>
-            </div>
-            <span class="live-badge">Live</span>
-          </div>
-          <p class="project-desc">Full-featured online store for herbs, spices, and natural oils. Includes product catalog with search and filters, shopping cart, WhatsApp checkout integration, real-time order notifications, customer order tracking, and a complete admin dashboard with discount management.</p>
-          <div class="badge-row">
-            <span class="badge">HTML5</span>
-            <span class="badge">Tailwind CSS</span>
-            <span class="badge">JavaScript</span>
-            <span class="badge">Supabase</span>
-            <span class="badge">PostgreSQL</span>
-            <span class="badge">Realtime</span>
-            <span class="badge">Netlify</span>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <div>
-              <div class="project-name">Admin Dashboard — Store Management System</div>
-              <div class="project-year">2024</div>
-            </div>
-          </div>
-          <p class="project-desc">Advanced admin panel for e-commerce management with sales analytics, full product CRUD, order management with status updates, real-time notifications without page refresh, and advanced search and filter capabilities.</p>
-          <div class="badge-row">
-            <span class="badge">JavaScript</span>
-            <span class="badge">Tailwind CSS</span>
-            <span class="badge">Supabase</span>
-            <span class="badge">WebSockets</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Services</div>
-        <div class="service-item">
-          <div class="service-icon"><i class="ti ti-shopping-cart" aria-hidden="true"></i></div>
-          <div class="service-text">
-            <div class="service-name">E-Commerce Development</div>
-            <div class="service-desc">Full-featured stores with cart, orders, and real-time notifications</div>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
-          <div class="service-text">
-            <div class="service-name">Admin Dashboards</div>
-            <div class="service-desc">Advanced management panels with analytics and reporting</div>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="ti ti-world" aria-hidden="true"></i></div>
-          <div class="service-text">
-            <div class="service-name">Landing Pages & Websites</div>
-            <div class="service-desc">Modern, responsive landing pages and company websites</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="sidebar">
-
-      <div class="section">
-        <div class="section-label">Frontend</div>
-        <div class="skill-tags">
-          <span class="skill-tag main-tag">HTML5</span>
-          <span class="skill-tag main-tag">CSS3</span>
-          <span class="skill-tag main-tag">JavaScript ES6+</span>
-          <span class="skill-tag main-tag">Tailwind CSS</span>
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Responsive Design</span>
-          <span class="skill-tag">RTL Design</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Backend & Database</div>
-        <div class="skill-tags">
-          <span class="skill-tag main-tag">Supabase</span>
-          <span class="skill-tag main-tag">PostgreSQL</span>
-          <span class="skill-tag">Prisma ORM</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">WebSockets</span>
-          <span class="skill-tag">Authentication</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git & GitHub</span>
-          <span class="skill-tag">Netlify</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">npm</span>
-          <span class="skill-tag">SEO</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Specialties</div>
-        <div class="skill-tags">
-          <span class="skill-tag">UI/UX Design</span>
-          <span class="skill-tag">Performance Optimization</span>
-          <span class="skill-tag">E-Commerce</span>
-          <span class="skill-tag">Real-time Apps</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Contact</div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <a href="https://wa.me/201158221296" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-secondary);text-decoration:none;padding:8px 10px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-secondary)">
-            <i class="ti ti-brand-whatsapp" style="font-size:16px" aria-hidden="true"></i> WhatsApp
-          </a>
-          <a href="https://github.com/7odaSaad22" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-secondary);text-decoration:none;padding:8px 10px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-secondary)">
-            <i class="ti ti-brand-github" style="font-size:16px" aria-hidden="true"></i> GitHub Profile
-          </a>
-          <a href="mailto:7odasaad22@gmail.com" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-secondary);text-decoration:none;padding:8px 10px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-secondary)">
-            <i class="ti ti-mail" style="font-size:16px" aria-hidden="true"></i> Email
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<button class="print-btn" onclick="window.print()"><i class="ti ti-printer" aria-hidden="true"></i> Print / Save PDF</button>
+  <button type="button" class="print-btn" onclick="window.print()" aria-label="Print or save as PDF"><i class="ti ti-printer" aria-hidden="true"></i> Print / Save PDF</button>
+</body>
+</html>

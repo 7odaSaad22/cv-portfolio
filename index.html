@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="محمود سعد — مطور ويب Full-Stack: متاجر إلكترونية، لوحات تحكم، React و Next.js و Supabase. مصر.">
   <title>محمود سعد — Full-Stack Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -127,7 +128,23 @@
     ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #22c55e, #16a34a); border-radius: 5px; }
     ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #16a34a, #15803d); }
     
-    /* Print Styles */
+    /* Light theme (toggle) — readable text on pale background */
+    body.light-layout {
+      background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+      background-size: auto !important;
+      animation: none !important;
+    }
+    body.light-layout .glass {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(15, 23, 42, 0.12);
+      color: #0f172a;
+    }
+    body.light-layout .text-white { color: #1e293b !important; }
+    body.light-layout .text-gray-300 { color: #475569 !important; }
+    body.light-layout .text-gray-400 { color: #64748b !important; }
+    body.light-layout footer { color: #64748b !important; }
+
+    /* Print */
     @media print {
       body { background: white !important; }
       .no-print, .particles, .animated-bg { display: none !important; }
@@ -142,13 +159,13 @@
   <div class="particles" id="particles"></div>
   
   <!-- Dark Mode Toggle -->
-  <button id="theme-toggle" class="no-print fixed top-4 right-4 z-50 w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform">
-    <span class="text-xl" id="theme-icon">🌙</span>
+  <button type="button" id="theme-toggle" aria-label="تبديل الوضع الفاتح والداكن" class="no-print fixed top-4 right-4 z-50 w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform">
+    <span class="text-xl" id="theme-icon" aria-hidden="true">🌙</span>
   </button>
   
   <!-- Action Buttons -->
   <div class="no-print fixed top-4 left-4 z-50 flex gap-2">
-    <button onclick="window.print()" class="glass px-4 py-2.5 rounded-xl font-bold text-sm hover:scale-105 transition-transform flex items-center gap-2">
+    <button type="button" onclick="window.print()" aria-label="طباعة أو حفظ PDF" class="glass px-4 py-2.5 rounded-xl font-bold text-sm hover:scale-105 transition-transform flex items-center gap-2">
       🖨️ طباعة
     </button>
     <a href="mahmoud_saad_cv.pdf" download class="glass px-4 py-2.5 rounded-xl font-bold text-sm hover:scale-105 transition-transform flex items-center gap-2">
@@ -181,7 +198,7 @@
           <a href="mailto:7odasaad22@gmail.com" class="glass px-4 py-2 rounded-lg hover:bg-primary-500/20 transition flex items-center gap-2">
             📧 7odasaad22@gmail.com
           </a>
-          <a href="https://github.com/7odaSaad22" target="_blank" class="glass px-4 py-2 rounded-lg hover:bg-primary-500/20 transition flex items-center gap-2">
+          <a href="https://github.com/7odaSaad22" target="_blank" rel="noopener noreferrer" class="glass px-4 py-2 rounded-lg hover:bg-primary-500/20 transition flex items-center gap-2">
             🔗 GitHub
           </a>
           <span class="glass px-4 py-2 rounded-lg flex items-center gap-2">📍 مصر</span>
@@ -268,7 +285,7 @@
               <h3 class="font-extrabold text-xl mb-1">🌿 عطارة اليرموك</h3>
               <p class="text-sm text-gray-400">متجر إلكتروني كامل</p>
             </div>
-            <a href="https://github.com/7odaSaad22/attaret-alyarmouk" target="_blank" class="no-print text-primary-400 hover:text-primary-300 transition text-2xl">🔗</a>
+            <a href="https://github.com/7odaSaad22/attaret-alyarmouk" target="_blank" rel="noopener noreferrer" class="no-print text-primary-400 hover:text-primary-300 transition text-2xl" aria-label="مستودع عطارة اليرموك على GitHub">🔗</a>
           </div>
           <p class="text-white text-sm mb-4">متجر إلكتروني متكامل مع سلة تسوق، نظام طلبات، لوحة تحكم، وإشعارات Realtime.</p>
           <div class="flex flex-wrap gap-2">
@@ -321,7 +338,7 @@
               <h3 class="font-extrabold text-xl mb-1">📄 CV Portfolio</h3>
               <p class="text-sm text-gray-400">موقع سيرة ذاتية</p>
             </div>
-            <a href="https://github.com/7odaSaad22/cv-portfolio" target="_blank" class="no-print text-primary-400 hover:text-primary-300 transition text-2xl">🔗</a>
+            <a href="https://github.com/7odaSaad22/cv-portfolio" target="_blank" rel="noopener noreferrer" class="no-print text-primary-400 hover:text-primary-300 transition text-2xl" aria-label="مستودع موقع السيرة على GitHub">🔗</a>
           </div>
           <p class="text-white text-sm mb-4">موقع سيرة ذاتية تفاعلي بتصميم عصري، دعم PDF، ومتجاوب بالكامل.</p>
           <div class="flex flex-wrap gap-2">
@@ -368,13 +385,13 @@
           <a href="tel:01158221296" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
             📞 01158221296
           </a>
-          <a href="https://wa.me/201158221296" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
+          <a href="https://wa.me/201158221296" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
             📱 واتساب
           </a>
           <a href="mailto:7odasaad22@gmail.com" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
             📧 إيميل
           </a>
-          <a href="https://github.com/7odaSaad22" target="_blank" class="bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
+          <a href="https://github.com/7odaSaad22" target="_blank" rel="noopener noreferrer" class="bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-xl font-bold transition hover:scale-105 flex items-center gap-2">
             🔗 GitHub
           </a>
         </div>
@@ -383,7 +400,7 @@
 
     <!-- Footer -->
     <footer class="text-center text-gray-500 text-sm mt-16">
-      <p>© 2024 محمود سعد — صنع بـ ❤️ و ☕</p>
+      <p>© 2026 محمود سعد — صنع بـ ❤️ و ☕</p>
     </footer>
   </div>
 
@@ -417,23 +434,25 @@
     window.addEventListener('scroll', reveal);
     reveal();
 
-    // Dark Mode Toggle
+    // Dark / light layout toggle (no conflicting .dark class on body)
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     let isDark = true;
-    
-    themeToggle.addEventListener('click', () => {
-      isDark = !isDark;
-      document.body.classList.toggle('dark');
-      themeIcon.textContent = isDark ? '🌙' : '☀️';
-      if (isDark) {
-        document.body.classList.remove('bg-gray-100', 'text-gray-800');
+
+    function applyTheme(dark) {
+      isDark = dark;
+      themeIcon.textContent = dark ? '🌙' : '☀️';
+      document.body.classList.toggle('light-layout', !dark);
+      if (dark) {
+        document.body.classList.remove('bg-gray-100', 'text-gray-800', 'text-gray-900');
         document.body.classList.add('animated-bg', 'text-gray-100');
       } else {
         document.body.classList.remove('animated-bg', 'text-gray-100');
-        document.body.classList.add('bg-gray-100', 'text-gray-800');
+        document.body.classList.add('bg-gray-100', 'text-gray-900');
       }
-    });
+    }
+
+    themeToggle.addEventListener('click', () => applyTheme(!isDark));
   </script>
 </body>
 </html>
